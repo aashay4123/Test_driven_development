@@ -53,6 +53,16 @@ describe("should render Input component", () => {
   });
 });
 
-describe("update State", () => {
-  test("should test the innitial value", () => {});
+describe("Redux Props", () => {
+  test("should have success as props", () => {
+    const success = true;
+    const wrapper = setup({ success });
+    const successProp = wrapper.instance().props.success;
+    expect(successProp).toBe(success);
+  });
+  test("should have `guessWord` as function in props", () => {
+    const wrapper = setup();
+    const guessWordProp = wrapper.instance().props.guessWord;
+    expect(guessWordProp).toBeInstanceOf(Function);
+  });
 });
