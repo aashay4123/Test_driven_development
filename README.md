@@ -1,8 +1,6 @@
 # Test Driven Development
 
-### this is a simple project using axios and redux.
-
-**To have a preview of this webapp visit https://aashayphirke.herokuapp.com/portfolios**
+### This is a simple project using axios and redux.
 
 ## tools used: React enzyme
 
@@ -12,7 +10,7 @@
 
 **Learned the concepts of TDD and its implementation**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
