@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 
 class Input extends Component {
   render() {
-    console.log(this.props);
-
     const context = this.props.success ? null : (
       <form className="form-inline">
         <input
@@ -27,7 +25,6 @@ class Input extends Component {
 }
 
 const mapStateToProps = ({ success }) => {
-  console.log(success);
   return { success };
 };
 
