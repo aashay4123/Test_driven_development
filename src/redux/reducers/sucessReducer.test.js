@@ -1,4 +1,4 @@
-import { ac, actionTypes } from "../actions";
+import { actionTypes } from "../actions";
 import sucessReducer from "./sucessReducer";
 
 test("should set default initial state `false`", () => {
