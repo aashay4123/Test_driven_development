@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { storeFactory } from "../test/testUtils"; // to add state in redux
-import App from "./App";
+import App, { UnconnectedApp } from "./App";
 
 const setup = (state = {}) => {
   const store = storeFactory(state);
@@ -35,5 +35,19 @@ describe("redux properties", () => {
     const wrapper = setup();
     const getSecretWordprop = wrapper.instance().props.getSecretWords;
     expect(getSecretWordprop).toBeInstanceOf(Function);
+  });
+  test("should run `getSecretWords` on App mount", () => {
+    const getSecretWordMock = jest.fn();
+    const props = {
+      getSecretWords: getSecretWordMock,
+      success: false,
+      guessWords: [],
+    };
+    const wrapper = shallow(<UnconnectedApp {...props} />);
+    wrapper.instance().componentDidMount();
+
+    const getSecretWordCallCount = getSecretWordMock.mock.calls.length;
+
+    expect(getSecretWordCallCount).toBe(1);
   });
 });
